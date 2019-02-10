@@ -35,8 +35,6 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
     ports:
       - "9101:9101"
-    networks:
-      - dbnode
     labels:
       - "mon.percona.container_type=collector"
 
@@ -45,8 +43,6 @@ services:
     container_name: db1_node_exporter
     ports:
       - "9100:9100"
-    networks:
-      - dbnode
     command: -collectors.enabled=diskstats,filesystem,loadavg,meminfo,netdev,stat,time,uname
     labels:
       - "mon.percona.container_type=collector"
