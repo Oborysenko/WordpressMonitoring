@@ -26,7 +26,7 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
-    
+
   cadvisor:
     image: google/cadvisor:latest
     container_name: db1_cadvisor
@@ -47,8 +47,8 @@ services:
       DATA_SOURCE_NAME: 'prom_exporter:X@(172.31.17.153:3306)/'
     ports:
       - "9104:9104"
-    command: 
-#      - '--help' 
+    command:
+#      - '--help'
       - '--web.listen-address=:9104'
       - '--collect.global_status'
 #    command: ["--web.listen-address=:9104", "-collect.global_status=true", "--collect.global_variables=false", "--collect.slave_status=false", "--collect.info_schema.tables=false", "--collect.binlog_size=false", "--collect.info_schema.processlist=false", "--collect.info_schema.userstats=false", "--collect.info_schema.tables=false", "--collect.auto_increment.columns=false", "--collect.info_schema.tablestats=false", "--collect.perf_schema.file_events=false", "--collect.perf_schema.eventsstatements=false", "--collect.perf_schema.indexiowaits=false", "--collect.perf_schema.tableiowaits=false", "--collect.perf_schema.tablelocks=false", "--collect.perf_schema.eventswaits=false"]
