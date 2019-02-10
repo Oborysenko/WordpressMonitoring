@@ -24,8 +24,6 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
-volumes:
-    db_data: {}
     
   cadvisor:
     image: google/cadvisor:latest
@@ -52,3 +50,5 @@ volumes:
     command: -collectors.enabled=diskstats,filesystem,loadavg,meminfo,netdev,stat,time,uname
     labels:
       - "mon.percona.container_type=collector"
+volumes:
+    db_data: {}
